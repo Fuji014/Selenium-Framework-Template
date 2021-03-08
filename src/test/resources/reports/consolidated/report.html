@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><html>
+<head>
+<title>ACOE Framework Test Report Manager</title>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js">//</script>
+<script>
+	$( document ).ready(function() {
+
+		function expandContent(element) {
+			element.parent().nextAll(".box, .line").show();
+			element.attr("class","collapse");
+			element.unbind("click");
+			element.text("[-]");
+			element.click(function( event ) {
+				collapseContent($(this));
+			});
+		};
+		
+		function collapseContent(element) {
+			element.parent().nextAll(".box, .line").hide();
+			element.attr("class","expand");
+			element.unbind("click");
+			element.text("[+]");
+			element.click(function( event ) {
+				expandContent($(this));
+			});
+		};
+		
+		$( "span.expand" ).click(function( event ) {
+			expandContent($(this));
+		});
+		
+		$( "span.collapse" ).click(function( event ) {
+			collapseContent($(this));
+		});
+		
+		$( "span.collapse-all" ).click(function( event ) {
+			$( "span.collapse" ).click();
+		});
+		
+		$( "span.expand-all" ).click(function( event ) {
+			$( "span.expand" ).click();
+		});
+		
+		$( "span.collapse" ).click();
+		
+		$( "div.box[id='summary']" ).find("span.expand:first").click();
+		
+	});
+    </script>
+<style>
+		h1 {
+			font-size: 16pt;
+			margin: 10px 0px 0px 0px;
+		}
+		div.box {
+			font-family:"Calibri";
+			font-size: 9pt;
+			display: block;
+			width: inherit;
+			border: none;
+			margin: 0px 5px 6px 5px;
+			padding-bottom: 0px;
+		}
+		div.line {
+			font-family:"Calibri";
+			font-size: 9pt;
+			display: block;
+			width: inherit;
+			border: solid #aaa 1px;
+			margin: 4px 5px 4px 5px;
+			padding: 0px 3px 0px 3px;
+		}
+		div.header1 {
+			font-family:"Calibri";
+			font-size: 10pt;
+			color: white;
+			background-color: #333;
+			width: inherit;
+			border: solid #aaa 1px;
+			min-height: 19px;
+			padding: 0px 3px 1px 3px;
+			margin: 5px 0px 5px 0px;
+		}
+		div.header2 {
+			font-family:"Calibri";
+			font-size: 10pt;
+			color: black;
+			background-color: #cfcfcf;
+			width: inherit;
+			border: solid #bfbfbf 1px;
+			min-height: 19px;
+			padding: 0px 3px 1px 3px;
+			margin: 5px 0px 5px 0px;
+		}
+		table.metrics {
+			font-family:"Calibri";
+			font-size: 9pt;
+			border: solid gray 1px;
+		}
+		table.metrics td{
+			text-align:center;
+			border: solid #aaa 1px;
+		}
+		span.label {
+			font-family:"Calibri";
+			color: black;
+			font-weight: bold;
+		}
+		span.passed {
+			color: green;
+		}
+		span.failed {
+			color: red;
+		}
+		span.warning {
+			color: orange;
+		}
+		span.norun, span.incomplete {
+			color: grey;
+		}
+		span.info {
+			color: #3377ff;
+		}
+		span.done {
+			color: green;
+		}
+		span.status {
+			color: grey;
+		}
+		span.expand, span.collapse {
+			font-family:"Courier";
+			font-size: 10pt;
+			color: grey;
+			font-weight: bold;
+		}
+		a:link {
+			color: #3377ff;
+		}
+		
+	</style>
+</head>
+<body>
+<center>
+<table class="metrics">
+<tr>
+<th width="105px">Level</th>
+<th width="75px">
+<span class="passed">Passed</span>
+</th>
+<th width="75px">
+<span class="failed">Failed</span>
+</th>
+<th width="75px">
+<span class="warning">Warning</span>
+</th>
+<th width="75px">
+<span class="incomplete">Incomplete</span>
+</th>
+<th width="75px">
+<span class="norun">No Run</span>
+</th>
+<th width="75px">Total</th>
+</tr>
+<tr>
+<td>Test Scenario</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Test Case</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Test Steps</td>
+<td>16</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>16</td>
+</tr>
+</table>
+</center>
+<h1>Test Scenario: Automation - Open sampleapp Web App</h1>
+<div class="box" id="test-summary">
+<div class="header2">
+<span class="collapse" href="#">[-]</span>Test Execution Summary<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span class="label">Time Started</span> : 03/04/2021 02:06 PM</div>
+<div class="line">
+<span class="label">Time Ended</span> : 03/04/2021 02:07 PM</div>
+<div class="line">
+<span class="label">Time Elapsed</span> : 0.64 mins</div>
+<div class="line">
+<span class="label">Browser</span> : chrome 88.0.4324.190</div>
+</div>
+<div class="box" id="test-case">
+<div class="header1">
+<span class="collapse" href="#">[-]</span>Test Case: Complete Automoble Process<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Navigate to sampleapp Web App<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | Navigate to http://sampleapp.tricentis.com/101/</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Verify Navigation Links<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Automobile Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Automobile Link] Verify that displayed equals true</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Truct Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Truct Link] Verify that displayed equals true</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Motorcycle Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Motorcycle Link] Verify that displayed equals true</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Camper Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Camper Link] Verify that displayed equals true</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Click Automobile Link<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Automobile Link] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Automobile Link] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Verify Elements if Exist in Isurance Process<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Automobile Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Automobile Link] Verify that displayed equals true</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [insurance Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [insurance Link] Verify that displayed equals true</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Product Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Product Link] Verify that displayed equals true</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Price Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Price Link] Verify that displayed equals true</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Send Quote Link] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Send Quote Link] Verify that displayed equals true</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Fill Vehicle Data<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Make - ListBox] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Make - ListBox] Select 'BMW'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Engine Performance - TextBox] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Engine Performance - TextBox] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Engine Performance - TextBox] Type "1600"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Date of Manufacture TextBox] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Date of Manufacture TextBox] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Date of Manufacture TextBox] Type "11/25/1987"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Number of Seats - ListBox] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Number of Seats - ListBox] Select '5'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Fuel Type] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Fuel Type] Select 'Diesel'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [List Price ] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [List Price ] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [List Price ] Type "90000"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [License Plate Number] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [License Plate Number] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [License Plate Number] Type "AVO"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Annual Mileage] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Annual Mileage] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Annual Mileage] Type "1234"</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Click next Button on Vehicle Data<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Fill insurant Data<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [First Name] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [First Name] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [First Name] Type "Jerome"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Last Name] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Last Name] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Last Name] Type "Gabat"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Date of Birth] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Date of Birth] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Date of Birth] Type "10/14/1998"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Gender - Male] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Gender - Male] Click element</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Street Address] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Street Address] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Street Address] Type "123 Street. Test"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Country] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Country] Select 'Philippines'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Zip Code] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Zip Code] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Zip Code] Type "3023"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [City] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [City] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [City] Type "Manila"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Occupation] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Occupation] Select 'Employee'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Hobbies - Speeding] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Hobbies - Speeding] Click element</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Hobbies - Skydiving] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:06 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Hobbies - Skydiving] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Click next Button on Insurant Data<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Fill Product Data<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [First Name] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [First Name] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [First Name] Type "5/1/2021"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Insurance Sum] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Insurance Sum] Select ' 5.000.000,00'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Merit Rating] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Merit Rating] Select 'Bonus 1'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Damage Insurance] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Damage Insurance] Select 'Full Coverage'</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Legal Defense Insurance] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Legal Defense Insurance] Click element</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Courtesy Car] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Courtesy Car] Select 'Yes'</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Click next Button on Product Data Section<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Fill Price Option Data<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Ultimate] Wait for element to display (15)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Ultimate] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Click next Button on Price Option Section<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Fill Price Option Section<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Type "jerome@gmail.com"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Type "jerome"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Type "Test@123"</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Confirm Password] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Confirm Password] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Confirm Password] Type "Test@123"</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Click next Button on Price Option Section<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Click element</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Verify Success Proccess<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Succes Message] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | Passed</div>
+</div>
+<div class="box" id="test-step">
+<div class="header2">
+<span class="collapse" href="#">[-]</span> Step: Click Ok Button on Success Modal<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (30)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Wait for element to display (10)</div>
+<div class="line">
+<span width="100px">03/04/2021 02:07 PM</span> | <b>
+<span class="passed">Passed</span>
+</b> | [Next Button] Click element</div>
+</div>
+</div>
+</body>
+</html>
